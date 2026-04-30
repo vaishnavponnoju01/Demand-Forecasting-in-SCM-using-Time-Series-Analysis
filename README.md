@@ -14,6 +14,7 @@ The project is built using Python 3 and requires the following libraries:
 * matplotlib
 * seaborn
 * scikit-learn
+* fpdf
 
 ## Installation and Setup
 
@@ -42,13 +43,13 @@ source venv/bin/activate
 
 Once the virtual environment is active, install the necessary packages using pip:
 
-pip install pandas numpy statsmodels matplotlib seaborn scikit-learn
+pip install pandas numpy statsmodels matplotlib seaborn scikit-learn fpdf
 
 ## Execution
 
-After the installation is complete, ensure your main script is named demand_analysis.py and run it using:
+After the installation is complete, ensure your main script is named DemandforecastTSanalysis.py and run it using:
 
-python demand_analysis.py
+python DemandforecastTSanalysis.py
 
 ## Technical Workflow
 
