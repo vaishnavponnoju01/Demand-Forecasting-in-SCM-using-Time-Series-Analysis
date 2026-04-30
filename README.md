@@ -1,77 +1,104 @@
-Demand Forecasting and Inventory Optimization in Supply Chain Management
-Project Overview
-This project implements a comprehensive time series analysis pipeline to forecast product demand and optimize inventory levels. In supply chain management, accurate demand forecasting is essential to minimize the bullwhip effect, reduce holding costs, and prevent stockouts. This repository provides a structured approach to analyzing historical sales data, identifying patterns, and making prescriptive decisions for procurement and stock management.
+# Demand Forecasting and Inventory Optimization in Supply Chain Management
 
-Technical Workflow
-The analysis follows a rigorous eight-step engineering pipeline:
+## Project Description
 
-Data Generation and Loading: Creation of a four-year monthly dataset featuring trends, seasonality, and holiday spikes.
+This project implements an end to end pipeline for time series analysis to forecast product demand and determine optimal inventory levels. It utilizes statistical methods to identify trends and seasonality in historical sales data, providing a scientific basis for supply chain decision making. The pipeline includes data visualization, stationarity testing, model training using SARIMA and Holt Winters, and inventory metrics calculation.
 
-Exploratory Data Analysis: Visualization of raw demand through rolling averages and monthly distribution box plots.
+## Requirements
 
-Seasonal Decomposition: Breaking down the time series into trend, seasonal, and residual components using additive modeling.
+The project is built using Python 3 and requires the following libraries:
 
-Stationarity Testing: Utilizing the Augmented Dickey-Fuller test to determine if the data requires differencing.
+* pandas
+* numpy
+* statsmodels
+* matplotlib
+* seaborn
+* scikit-learn
 
-Correlation Analysis: Plotting Autocorrelation and Partial Autocorrelation Functions to identify parameters for statistical models.
+## Installation and Setup
 
-Model Training: Implementation of Holt-Winters Triple Exponential Smoothing and SARIMA models.
+Follow these steps to set up the project environment on your local machine.
 
-Forecast Evaluation: Comparing models against a Seasonal Naive baseline using Mean Absolute Error and Mean Absolute Percentage Error.
+### Step 1: Create a Project Folder
 
-Inventory Optimization: Applying forecast outputs to calculate Economic Order Quantity, Safety Stock, and Reorder Points.
+Open your terminal or command prompt and run the following commands to create and enter a new directory:
 
-Key Features
-Dual Modeling Approach: Compares a state-space statistical model (SARIMA) with an exponential smoothing model (Holt-Winters).
+mkdir Demand-Forecasting-Project
+cd Demand-Forecasting-Project
 
-Statistical Diagnostics: Includes formal testing for stationarity and lag correlations to justify model selection.
+### Step 2: Set Up a Virtual Environment
 
-Prescriptive Analytics: Translates abstract forecasts into concrete business metrics such as Reorder Points.
+It is recommended to use a virtual environment to manage dependencies. Run the appropriate command for your operating system.
 
-Inventory Simulation: Includes a saw-tooth model visualization to illustrate inventory depletion and replenishment cycles.
+python -m venv venv
 
-Prerequisites
-The following Python libraries are required to run this project:
+To activate the environment on Windows:
+.\venv\Scripts\activate
 
-Pandas: For data manipulation and time-series indexing.
+To activate the environment on macOS or Linux:
+source venv/bin/activate
 
-NumPy: For mathematical operations and data simulation.
+### Step 3: Install Required Libraries
 
-Statsmodels: For seasonal decomposition, ADF testing, and SARIMA modeling.
+Once the virtual environment is active, install the necessary packages using pip:
 
-Matplotlib and Seaborn: For generating diagnostic and results plots.
-
-Scikit-learn: For calculating error metrics.
-
-Installation
-To set up the environment, use the following commands:
-
-git clone https://github.com/YourUsername/Project-Name.git
-cd Project-Name
 pip install pandas numpy statsmodels matplotlib seaborn scikit-learn
 
-Usage
-The main execution script contains the full pipeline. To run the analysis and generate the plots:
+## Execution
+
+After the installation is complete, ensure your main script is named demand_analysis.py and run it using:
 
 python demand_analysis.py
 
-Model Evaluation Metrics
+## Technical Workflow
+
+The analysis follows a rigorous eight-step engineering pipeline:
+
+1. Data Generation and Loading: Creation of a four-year monthly dataset featuring trends, seasonality, and holiday spikes.
+2. Exploratory Data Analysis: Visualization of raw demand through rolling averages and monthly distribution box plots.
+3. Seasonal Decomposition: Breaking down the time series into trend, seasonal, and residual components using additive modeling.
+4. Stationarity Testing: Utilizing the Augmented Dickey-Fuller test to determine if the data requires differencing.
+5. Correlation Analysis: Plotting Autocorrelation and Partial Autocorrelation Functions to identify parameters for statistical models.
+6. Model Training: Implementation of Holt-Winters Triple Exponential Smoothing and SARIMA models.
+7. Forecast Evaluation: Comparing models against a Seasonal Naive baseline using Mean Absolute Error and Mean Absolute Percentage Error.
+8. Inventory Optimization: Applying forecast outputs to calculate Economic Order Quantity, Safety Stock, and Reorder Points.
+
+## Key Features
+
+- Dual Modeling Approach: Compares a state-space statistical model (SARIMA) with an exponential smoothing model (Holt-Winters).
+- Statistical Diagnostics: Includes formal testing for stationarity and lag correlations to justify model selection.
+- Prescriptive Analytics: Translates abstract forecasts into concrete business metrics such as Reorder Points.
+- Inventory Simulation: Includes a saw-tooth model visualization to illustrate inventory depletion and replenishment cycles.
+
+## Inventory Optimization Results
+
+The system outputs actionable metrics based on the most accurate forecast:
+
+* Safety Stock: The buffer quantity to prevent stockouts during demand spikes.
+* Reorder Point: The specific inventory level that triggers a new replenishment order.
+* Economic Order Quantity: The optimal order size to minimize total ordering and holding costs.
+## Tech Stack
+
+- Language: Python 3.x
+- Libraries: Pandas, NumPy, Statsmodels, Scikit-learn, Matplotlib, Seaborn
+## Model Evaluation Metrics
+
 The performance of the forecasting models is evaluated based on:
 
-Mean Absolute Error (MAE): Measures the average magnitude of errors in a set of forecasts.
+- Mean Absolute Error (MAE): Measures the average magnitude of errors in a set of forecasts.
+- Root Mean Squared Error (RMSE): Penalizes larger errors more heavily.
+- Mean Absolute Percentage Error (MAPE): Provides a percentage-based accuracy score for easier business interpretation.
 
-Root Mean Squared Error (RMSE): Penalizes larger errors more heavily.
+## License
+This project is licensed under the MIT License.
 
-Mean Absolute Percentage Error (MAPE): Provides a percentage-based accuracy score for easier business interpretation.
 
-Inventory Optimization Parameters
-The project calculates three critical inventory metrics:
 
-Safety Stock: Buffer inventory required to protect against demand variability.
 
-Reorder Point (ROP): The inventory level at which a new replenishment order should be placed.
 
-Economic Order Quantity (EOQ): The ideal order size that minimizes the total sum of ordering and holding costs.
 
-License
-This project is released under the MIT License. Details can be found in the LICENSE file.
+
+
+
+
+
